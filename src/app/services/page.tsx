@@ -64,9 +64,11 @@ export default function ServicesPage() {
                       </li>
                     ))}
                   </ul>
-                  <Button className="bg-blue-600 hover:bg-blue-700">
-                    Learn More About Heating
-                  </Button>
+                  <Link href="/services/heating">
+                    <Button className="bg-blue-600 hover:bg-blue-700">
+                      Learn More About Heating
+                    </Button>
+                  </Link>
                 </div>
                 <div className="order-1 lg:order-2 relative h-[400px] rounded-lg overflow-hidden shadow-xl">
                   <Image
@@ -118,9 +120,11 @@ export default function ServicesPage() {
                       </li>
                     ))}
                   </ul>
-                  <Button className="bg-blue-600 hover:bg-blue-700">
-                    Learn More About Cooling
-                  </Button>
+                  <Link href="/services/air-conditioning">
+                    <Button className="bg-blue-600 hover:bg-blue-700">
+                      Learn More About Cooling
+                    </Button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -156,9 +160,11 @@ export default function ServicesPage() {
                       </li>
                     ))}
                   </ul>
-                  <Button className="bg-blue-600 hover:bg-blue-700">
-                    Learn More About Ventilation
-                  </Button>
+                  <Link href="/services/ventilation">
+                    <Button className="bg-blue-600 hover:bg-blue-700">
+                      Learn More About Ventilation
+                    </Button>
+                  </Link>
                 </div>
                 <div className="order-1 lg:order-2 relative h-[400px] rounded-lg overflow-hidden shadow-xl">
                   <Image
@@ -210,9 +216,11 @@ export default function ServicesPage() {
                       </li>
                     ))}
                   </ul>
-                  <Button className="bg-blue-600 hover:bg-blue-700">
-                    Learn More About Maintenance
-                  </Button>
+                  <Link href="/services/maintenance">
+                    <Button className="bg-blue-600 hover:bg-blue-700">
+                      Learn More About Maintenance
+                    </Button>
+                  </Link>
                 </div>
               </div>
             </div>

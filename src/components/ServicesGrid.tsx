@@ -1,11 +1,14 @@
 import React from "react";
+import Link from "next/link";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
+  CardFooter,
 } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import {
   Thermometer,
   Wind,
@@ -13,21 +16,24 @@ import {
   Wrench,
   Settings,
   RefreshCw,
+  ArrowRight,
 } from "lucide-react";
 
 interface ServiceCardProps {
   title: string;
   description: string;
   icon: React.ReactNode;
+  link?: string;
 }
 
 const ServiceCard = ({
   title,
   description,
   icon = <Thermometer />,
+  link,
 }: ServiceCardProps) => {
-  return (
-    <Card className="bg-white transition-all duration-300 hover:shadow-lg hover:-translate-y-1 border-none overflow-hidden">
+  const CardComponent = () => (
+    <Card className="bg-white transition-all duration-300 hover:shadow-lg hover:-translate-y-1 border-none overflow-hidden h-full flex flex-col">
       <CardHeader className="flex flex-col items-center text-center pb-2">
         <div className="p-4 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 text-white mb-4 shadow-md">
           {icon}
@@ -36,13 +42,33 @@ const ServiceCard = ({
           {title}
         </CardTitle>
       </CardHeader>
-      <CardContent className="text-center">
+      <CardContent className="text-center flex-grow">
         <CardDescription className="text-gray-600">
           {description}
         </CardDescription>
       </CardContent>
+      {link && (
+        <CardFooter className="pt-0 pb-4 flex justify-center">
+          <Button
+            variant="ghost"
+            className="text-blue-600 hover:text-blue-800 p-0 h-auto font-medium"
+          >
+            Learn More <ArrowRight className="ml-1 h-4 w-4" />
+          </Button>
+        </CardFooter>
+      )}
     </Card>
   );
+
+  if (link) {
+    return (
+      <Link href={link} className="h-full">
+        <CardComponent />
+      </Link>
+    );
+  }
+
+  return <CardComponent />;
 };
 
 const ServicesGrid = () => {
@@ -52,30 +78,35 @@ const ServicesGrid = () => {
       description:
         "Expert installation and maintenance of furnaces, boilers, and heat pumps to keep your home warm and comfortable.",
       icon: <Thermometer size={24} />,
+      link: "/services/heating",
     },
     {
       title: "Air Conditioning",
       description:
         "Professional cooling solutions including installation, repair, and maintenance of all AC systems.",
       icon: <Wind size={24} />,
+      link: "/services/air-conditioning",
     },
     {
       title: "Ventilation",
       description:
         "Improve indoor air quality with our comprehensive ventilation services and solutions.",
       icon: <Fan size={24} />,
+      link: "/services/ventilation",
     },
     {
       title: "Installation",
       description:
         "Professional installation of new HVAC systems with expert guidance on the best options for your space.",
       icon: <Wrench size={24} />,
+      link: "/services/installation",
     },
     {
       title: "Maintenance",
       description:
         "Regular maintenance programs to ensure your HVAC systems operate efficiently and reliably year-round.",
       icon: <Settings size={24} />,
+      link: "/services/maintenance",
     },
     {
       title: "Repair",
@@ -105,6 +136,7 @@ const ServicesGrid = () => {
               title={service.title}
               description={service.description}
               icon={service.icon}
+              link={service.link}
             />
           ))}
         </div>
