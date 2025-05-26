@@ -294,20 +294,24 @@ export default function AboutPage() {
               appointment.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
-              <Button
-                size="lg"
-                variant="secondary"
-                className="shadow-lg hover:shadow-xl transition-shadow"
-              >
-                Request a Quote
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="bg-transparent text-white border-white hover:bg-white hover:text-blue-600 shadow-lg hover:shadow-xl transition-shadow"
-              >
-                Schedule Service
-              </Button>
+              <Link href="/quote">
+                <Button
+                  size="lg"
+                  variant="secondary"
+                  className="shadow-lg hover:shadow-xl transition-shadow"
+                >
+                  Request a Quote
+                </Button>
+              </Link>
+              <Link href="/schedule">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="bg-transparent text-white border-white hover:bg-white hover:text-blue-600 shadow-lg hover:shadow-xl transition-shadow"
+                >
+                  Schedule Service
+                </Button>
+              </Link>
             </div>
           </div>
         </section>

@@ -239,20 +239,24 @@ export default function VentilationPage() {
                 ventilation services.
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <Button
-                  size="lg"
-                  variant="secondary"
-                  className="shadow-md hover:shadow-lg"
-                >
-                  Request a Quote
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="bg-transparent border-white text-white hover:bg-white hover:text-blue-600"
-                >
-                  Schedule Service
-                </Button>
+                <Link href="/quote">
+                  <Button
+                    size="lg"
+                    variant="secondary"
+                    className="shadow-md hover:shadow-lg"
+                  >
+                    Request a Quote
+                  </Button>
+                </Link>
+                <Link href="/schedule">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="bg-transparent border-white text-white hover:bg-white hover:text-blue-600"
+                  >
+                    Schedule Service
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>

@@ -53,10 +53,14 @@ export default function Header() {
         </nav>
 
         <div className="flex items-center space-x-3">
-          <Button variant="outline" className="hidden sm:flex">
-            Request a Quote
-          </Button>
-          <Button className="hidden sm:flex">Schedule Service</Button>
+          <Link href="/quote">
+            <Button variant="outline" className="hidden sm:flex">
+              Request a Quote
+            </Button>
+          </Link>
+          <Link href="/schedule">
+            <Button className="hidden sm:flex">Schedule Service</Button>
+          </Link>
           <Button variant="ghost" size="icon" className="md:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"

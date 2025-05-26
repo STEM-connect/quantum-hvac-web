@@ -3,6 +3,7 @@
 import React from "react";
 import { Button } from "./ui/button";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 interface HeroSectionProps {
   title?: string;
@@ -40,19 +41,23 @@ const HeroSection = ({
           </h1>
           <p className="text-lg md:text-xl mb-8 text-gray-100">{subtitle}</p>
           <div className="flex flex-wrap gap-4">
-            <Button
-              size="lg"
-              className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-8 py-3 rounded-md transition-colors shadow-lg hover:shadow-xl"
-            >
-              {ctaText}
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="bg-transparent border-2 border-white text-white hover:bg-white/20 font-medium px-8 py-3 rounded-md transition-colors shadow-lg hover:shadow-xl"
-            >
-              Schedule Service
-            </Button>
+            <Link href="/quote">
+              <Button
+                size="lg"
+                className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-8 py-3 rounded-md transition-colors shadow-lg hover:shadow-xl"
+              >
+                {ctaText}
+              </Button>
+            </Link>
+            <Link href="/schedule">
+              <Button
+                size="lg"
+                variant="outline"
+                className="bg-transparent border-2 border-white text-white hover:bg-white/20 font-medium px-8 py-3 rounded-md transition-colors shadow-lg hover:shadow-xl"
+              >
+                Schedule Service
+              </Button>
+            </Link>
           </div>
         </motion.div>
       </div>

@@ -302,20 +302,24 @@ export default function MaintenancePage() {
                 one of our maintenance plans.
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <Button
-                  size="lg"
-                  variant="secondary"
-                  className="shadow-md hover:shadow-lg"
-                >
-                  Schedule Maintenance
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="bg-transparent border-white text-white hover:bg-white hover:text-blue-600"
-                >
-                  View Maintenance Plans
-                </Button>
+                <Link href="/schedule">
+                  <Button
+                    size="lg"
+                    variant="secondary"
+                    className="shadow-md hover:shadow-lg"
+                  >
+                    Schedule Maintenance
+                  </Button>
+                </Link>
+                <Link href="/quote">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="bg-transparent border-white text-white hover:bg-white hover:text-blue-600"
+                  >
+                    View Maintenance Plans
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
