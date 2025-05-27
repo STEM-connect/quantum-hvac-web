@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import HeroSection from "@/components/HeroSection";
 import { Star, Quote } from "lucide-react";
