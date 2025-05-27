@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import HeroSection from "@/components/HeroSection";
@@ -9,9 +11,81 @@ import {
   Phone,
   Building2,
   MessageSquare,
+  CheckCircle,
 } from "lucide-react";
 
 export default function QuotePage() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setError("");
+
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: formData.get("name") as string,
+      email: formData.get("email") as string,
+      phone: formData.get("phone") as string,
+      service: formData.get("service") as string,
+      propertyType: formData.get("property-type") as string,
+      message: formData.get("message") as string,
+    };
+
+    try {
+      const response = await fetch("/api/quote", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true);
+      } else {
+        setError("Failed to send quote request. Please try again.");
+      }
+    } catch (error) {
+      setError("Failed to send quote request. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  if (isSubmitted) {
+    return (
+      <div className="min-h-screen bg-white">
+        <main>
+          <HeroSection
+            title="Quote Request Sent!"
+            subtitle="Thank you for your interest. We'll get back to you within 24 hours."
+            backgroundImage="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1400&q=90"
+            ctaText="Back to Home"
+          />
+          <section className="py-16 bg-white">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl text-center">
+              <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-6" />
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                Quote Request Received!
+              </h2>
+              <p className="text-lg text-gray-600 mb-8">
+                We've received your quote request and will contact you within 24
+                hours with a detailed estimate.
+              </p>
+              <p className="text-gray-600">
+                Need immediate assistance? Call us at{" "}
+                <span className="text-blue-600 font-medium">647-704-1780</span>
+              </p>
+            </div>
+          </section>
+        </main>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-white">
       <main>
@@ -38,7 +112,12 @@ export default function QuotePage() {
             </div>
 
             <div className="bg-white rounded-lg shadow-lg p-8 border border-gray-100">
-              <form className="space-y-6">
+              {error && (
+                <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-md">
+                  <p className="text-red-600">{error}</p>
+                </div>
+              )}
+              <form className="space-y-6" onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label
@@ -54,6 +133,7 @@ export default function QuotePage() {
                       <input
                         type="text"
                         id="name"
+                        name="name"
                         className="pl-10 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 bg-gray-50 py-3 px-4"
                         placeholder="John Doe"
                         required
@@ -75,6 +155,7 @@ export default function QuotePage() {
                       <input
                         type="email"
                         id="email"
+                        name="email"
                         className="pl-10 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 bg-gray-50 py-3 px-4"
                         placeholder="john@example.com"
                         required
@@ -98,6 +179,7 @@ export default function QuotePage() {
                       <input
                         type="tel"
                         id="phone"
+                        name="phone"
                         className="pl-10 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 bg-gray-50 py-3 px-4"
                         placeholder="(647) 123-4567"
                         required
@@ -118,6 +200,7 @@ export default function QuotePage() {
                       </div>
                       <select
                         id="service"
+                        name="service"
                         className="pl-10 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 bg-gray-50 py-3 px-4"
                         required
                       >
@@ -146,6 +229,7 @@ export default function QuotePage() {
                     </div>
                     <select
                       id="property-type"
+                      name="property-type"
                       className="pl-10 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 bg-gray-50 py-3 px-4"
                       required
                     >
@@ -170,6 +254,7 @@ export default function QuotePage() {
                     </div>
                     <textarea
                       id="message"
+                      name="message"
                       rows={4}
                       className="pl-10 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 bg-gray-50 py-3 px-4"
                       placeholder="Please provide details about your project, including any specific requirements or questions you have..."
@@ -181,10 +266,11 @@ export default function QuotePage() {
                 <div>
                   <Button
                     type="submit"
-                    className="w-full bg-blue-600 hover:bg-blue-700 flex items-center justify-center gap-2"
+                    disabled={isSubmitting}
+                    className="w-full bg-blue-600 hover:bg-blue-700 flex items-center justify-center gap-2 disabled:opacity-50"
                   >
                     <Send className="h-5 w-5" />
-                    Submit Quote Request
+                    {isSubmitting ? "Sending..." : "Submit Quote Request"}
                   </Button>
                 </div>
               </form>
