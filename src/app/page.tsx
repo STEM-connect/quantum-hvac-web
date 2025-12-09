@@ -112,17 +112,41 @@ export default function Home() {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4 }}
-              className="mt-12 text-center"
+              className="mt-16"
             >
-              <p className="text-sm text-gray-500 mb-4">Authorized Dealer for Premium Brands:</p>
-              <div className="flex flex-wrap justify-center gap-6 items-center text-gray-400 font-semibold text-sm">
-                <span>CARRIER</span>
-                <span>TRANE</span>
-                <span>LENNOX</span>
-                <span>YORK</span>
-                <span>GOODMAN</span>
-                <span>RHEEM</span>
+              <p className="text-center text-sm text-gray-500 mb-8 font-medium uppercase tracking-wider">Authorized Dealer for Premium Brands</p>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 md:gap-6">
+                {[
+                  { name: "Carrier", logo: "/images/brands/carrier.png" },
+                  { name: "Trane", logo: "/images/brands/trane.png" },
+                  { name: "Lennox", logo: "/images/brands/lennox.png" },
+                  { name: "York", logo: "/images/brands/york.png" },
+                  { name: "Goodman", logo: "/images/brands/goodman.png" },
+                  { name: "Rheem", logo: "/images/brands/rheem.png" },
+                ].map((brand, index) => (
+                  <motion.div
+                    key={brand.name}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.1 * index }}
+                    className="group"
+                  >
+                    <div className="relative bg-white rounded-xl border-2 border-gray-200 p-4 h-24 flex items-center justify-center hover:border-quantum-blue hover:shadow-lg transition-all duration-300 cursor-pointer overflow-hidden">
+                      <Image
+                        src={brand.logo}
+                        alt={`${brand.name} logo`}
+                        width={140}
+                        height={60}
+                        className="object-contain max-h-14 w-auto grayscale group-hover:grayscale-0 opacity-70 group-hover:opacity-100 transition-all duration-300"
+                      />
+                    </div>
+                  </motion.div>
+                ))}
               </div>
+              <p className="text-center text-xs text-gray-400 mt-6">
+                Factory-trained technicians | Genuine parts | Extended warranties available
+              </p>
             </motion.div>
           </div>
         </section>
