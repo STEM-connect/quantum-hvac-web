@@ -221,7 +221,7 @@ export default function PrivacyPage() {
                 <strong>Phone:</strong> <a href="tel:6477041780" className="text-quantum-blue hover:underline">(647) 704-1780</a>
               </p>
               <p className="text-gray-700 mb-2">
-                <strong>Email:</strong> <a href="mailto:info@callquantumhvac.com" className="text-quantum-blue hover:underline">info@callquantumhvac.com</a>
+                <strong>Email:</strong> <a href="mailto:vivek@quantummechanical.co" className="text-quantum-blue hover:underline">vivek@quantummechanical.co</a>
               </p>
               <p className="text-gray-700">
                 <strong>Website:</strong> <a href="https://www.callquantumhvac.com" className="text-quantum-blue hover:underline">www.callquantumhvac.com</a>

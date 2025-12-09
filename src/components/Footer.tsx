@@ -62,10 +62,10 @@ export default function Footer() {
                 <li className="flex items-start">
                   <Mail className="h-5 w-5 mr-3 mt-0.5 flex-shrink-0" />
                   <a
-                    href="mailto:info@callquantumhvac.com"
+                    href="mailto:vivek@quantummechanical.co"
                     className="hover:text-blue-100 transition-colors"
                   >
-                    info@callquantumhvac.com
+                    vivek@quantummechanical.co
                   </a>
                 </li>
                 <li className="flex items-start">
