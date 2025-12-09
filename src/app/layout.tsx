@@ -9,9 +9,15 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Quantum HVAC System Inc.",
+  title: "Quantum HVAC System Inc. - Where Passion Meets Dedication",
   description:
-    "Your trusted HVAC experts for heating, cooling, and ventilation services.",
+    "Professional Heating, Air Conditioning & Refrigeration services for Industrial, Commercial, Institutional & Environmental applications. 24/7 Emergency Service. Call 647.704.1780",
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "any" }
+    ],
+  },
 };
 
 export default function RootLayout({

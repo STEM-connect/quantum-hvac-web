@@ -3,6 +3,7 @@
 const nextConfig = {
   images: {
     domains: ["images.unsplash.com", "api.dicebear.com"],
+    dangerouslyAllowSVG: true, // Enable SVG images
   },
 };
 

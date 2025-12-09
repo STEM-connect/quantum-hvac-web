@@ -24,7 +24,7 @@ export default function AboutPage() {
         <HeroSection
           title="About Quantum HVAC Systems"
           subtitle="Delivering exceptional heating, ventilation, and air conditioning solutions since 2008."
-          backgroundImage="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1400&q=90"
+          backgroundImage="https://images.unsplash.com/photo-1621905251189-08b45249be80?w=1400&q=90"
         />
 
         {/* Company Story */}
@@ -57,7 +57,7 @@ export default function AboutPage() {
               </div>
               <div className="relative h-[500px] rounded-lg overflow-hidden shadow-xl">
                 <Image
-                  src="https://images.unsplash.com/photo-1581094795830-a8cd28c8893f?w=800&q=80"
+                  src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&q=80"
                   alt="Quantum HVAC team"
                   fill
                   className="object-cover"
@@ -181,7 +181,7 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
               <div className="relative h-80 rounded-lg overflow-hidden shadow-xl">
                 <Image
-                  src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=800&q=80"
+                  src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80"
                   alt="HVAC Workshop"
                   fill
                   className="object-cover"
@@ -207,70 +207,6 @@ export default function AboutPage() {
               </div>
             </div>
 
-            {/* Team Section */}
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                Meet Our Team
-              </h2>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Our experienced professionals are dedicated to providing you
-                with the best HVAC service possible.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {[
-                {
-                  name: "Michael Chen",
-                  position: "Founder & CEO",
-                  image:
-                    "https://api.dicebear.com/7.x/avataaars/svg?seed=Michael&backgroundColor=b6e3f4",
-                  bio: "With over 20 years of experience in HVAC systems, Michael founded Quantum HVAC with a vision of excellence.",
-                },
-                {
-                  name: "Sarah Johnson",
-                  position: "Operations Manager",
-                  image:
-                    "https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah&backgroundColor=c0aede",
-                  bio: "Sarah ensures that all our operations run smoothly and that every customer receives timely, quality service.",
-                },
-                {
-                  name: "David Rodriguez",
-                  position: "Lead Technician",
-                  image:
-                    "https://api.dicebear.com/7.x/avataaars/svg?seed=David&backgroundColor=d1d4f9",
-                  bio: "David's technical expertise and problem-solving skills make him an invaluable asset to our service team.",
-                },
-                {
-                  name: "Aisha Patel",
-                  position: "Customer Relations",
-                  image:
-                    "https://api.dicebear.com/7.x/avataaars/svg?seed=Aisha&backgroundColor=ffd5dc",
-                  bio: "Aisha is dedicated to ensuring that every customer has a positive experience with Quantum HVAC.",
-                },
-              ].map((member, index) => (
-                <div
-                  key={index}
-                  className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"
-                >
-                  <div className="h-64 bg-gray-200 relative">
-                    <Image
-                      src={member.image}
-                      alt={member.name}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-semibold mb-1">
-                      {member.name}
-                    </h3>
-                    <p className="text-blue-600 mb-4">{member.position}</p>
-                    <p className="text-gray-600">{member.bio}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
         </section>
 

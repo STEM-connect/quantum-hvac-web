@@ -85,7 +85,7 @@ export default function TestimonialsPage() {
         <HeroSection
           title="Customer Testimonials"
           subtitle="Don't just take our word for it. See what our satisfied customers have to say about our services."
-          backgroundImage="https://images.unsplash.com/photo-1556156653-e5a7c69cc263?w=1400&q=90"
+          backgroundImage="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1400&q=90"
         />
 
         {/* Featured Testimonial */}
@@ -200,7 +200,7 @@ export default function TestimonialsPage() {
               <div className="bg-white rounded-lg overflow-hidden shadow-md">
                 <div className="relative h-60">
                   <Image
-                    src="https://images.unsplash.com/photo-1560448204-603b3fc33ddc?w=800&q=80"
+                    src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&q=80"
                     alt="Commercial HVAC Installation"
                     fill
                     className="object-cover"
@@ -219,7 +219,7 @@ export default function TestimonialsPage() {
               <div className="bg-white rounded-lg overflow-hidden shadow-md">
                 <div className="relative h-60">
                   <Image
-                    src="https://images.unsplash.com/photo-1565183928294-7063f23ce0f8?w=800&q=80"
+                    src="https://images.unsplash.com/photo-1631545306743-39e16e132fa7?w=800&q=80"
                     alt="Residential AC Installation"
                     fill
                     className="object-cover"
@@ -238,7 +238,7 @@ export default function TestimonialsPage() {
               <div className="bg-white rounded-lg overflow-hidden shadow-md">
                 <div className="relative h-60">
                   <Image
-                    src="https://images.unsplash.com/photo-1527089953956-f5123631d6bb?w=800&q=80"
+                    src="https://images.unsplash.com/photo-1558002038-1055907df827?w=800&q=80"
                     alt="Smart Thermostat Installation"
                     fill
                     className="object-cover"

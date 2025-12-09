@@ -1,9 +1,12 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import HeroSection from "@/components/HeroSection";
-import { CheckCircle, ArrowLeft } from "lucide-react";
+import { CheckCircle, ArrowLeft, ChevronRight, DollarSign, Star, Shield, Award, Snowflake } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function AirConditioningPage() {
   return (
@@ -12,20 +15,68 @@ export default function AirConditioningPage() {
         {/* Hero Section */}
         <HeroSection
           title="Air Conditioning Services"
-          subtitle="Stay cool and comfortable with our professional cooling solutions."
-          backgroundImage="https://images.unsplash.com/photo-1581788904027-c0a3ea9c30d9?w=1400&q=90"
+          subtitle="Beat the heat with reliable cooling solutions for your home. From new AC installation to emergency repairs, we keep your family comfortable all summer."
+          backgroundImage="/images/company/photo-3.jpg"
         />
+
+        {/* Racing Stripe Divider */}
+        <div className="h-2 bg-gradient-to-r from-[#0066CC] via-[#00BCD4] to-[#E63946]"></div>
+
+        {/* Breadcrumb Navigation */}
+        <section className="bg-gray-50 border-b border-gray-200">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div className="flex items-center text-sm text-gray-600">
+              <Link href="/" className="hover:text-[#E63946] transition-colors">
+                Home
+              </Link>
+              <ChevronRight className="h-4 w-4 mx-2" />
+              <Link href="/services" className="hover:text-[#E63946] transition-colors">
+                Services
+              </Link>
+              <ChevronRight className="h-4 w-4 mx-2" />
+              <Link href="/services/residential" className="hover:text-[#E63946] transition-colors">
+                Residential
+              </Link>
+              <ChevronRight className="h-4 w-4 mx-2" />
+              <span className="text-[#E63946] font-medium">Air Conditioning</span>
+            </div>
+          </div>
+        </section>
+
+        {/* Trust Indicators */}
+        <section className="bg-[#E63946] text-white py-6">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+              <div className="flex flex-col items-center gap-2">
+                <Snowflake className="h-8 w-8" />
+                <div className="font-bold text-lg">Stay Cool</div>
+              </div>
+              <div className="flex flex-col items-center gap-2">
+                <Shield className="h-8 w-8" />
+                <div className="font-bold text-lg">24/7 Emergency</div>
+              </div>
+              <div className="flex flex-col items-center gap-2">
+                <Award className="h-8 w-8" />
+                <div className="font-bold text-lg">Expert Techs</div>
+              </div>
+              <div className="flex flex-col items-center gap-2">
+                <DollarSign className="h-8 w-8" />
+                <div className="font-bold text-lg">Fair Pricing</div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* Main Content */}
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mb-8">
               <Link
-                href="/services"
-                className="flex items-center text-blue-600 hover:text-blue-800 mb-6"
+                href="/services/residential"
+                className="flex items-center text-[#E63946] hover:text-[#C52A36] mb-6 font-medium"
               >
                 <ArrowLeft className="h-4 w-4 mr-2" />
-                Back to All Services
+                Back to Residential Services
               </Link>
               <h2 className="text-3xl font-bold text-gray-900 mb-6">
                 Professional Air Conditioning Solutions
@@ -54,7 +105,7 @@ export default function AirConditioningPage() {
                 </p>
                 <div className="relative h-64 rounded-lg overflow-hidden mb-6">
                   <Image
-                    src="https://images.unsplash.com/photo-1581788604067-711fd259af0b?w=800&q=80"
+                    src="/images/company/photo-1.jpg"
                     alt="AC Installation"
                     fill
                     className="object-cover"
@@ -62,15 +113,15 @@ export default function AirConditioningPage() {
                 </div>
                 <ul className="space-y-2 mb-6">
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-blue-600 mr-2 mt-1 flex-shrink-0" />
+                    <CheckCircle className="h-5 w-5 text-[#E63946] mr-2 mt-1 flex-shrink-0" />
                     <span>Energy-efficient system options</span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-blue-600 mr-2 mt-1 flex-shrink-0" />
+                    <CheckCircle className="h-5 w-5 text-[#E63946] mr-2 mt-1 flex-shrink-0" />
                     <span>Professional sizing and installation</span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-blue-600 mr-2 mt-1 flex-shrink-0" />
+                    <CheckCircle className="h-5 w-5 text-[#E63946] mr-2 mt-1 flex-shrink-0" />
                     <span>Removal and disposal of old equipment</span>
                   </li>
                 </ul>
@@ -88,7 +139,7 @@ export default function AirConditioningPage() {
                 </p>
                 <div className="relative h-64 rounded-lg overflow-hidden mb-6">
                   <Image
-                    src="https://images.unsplash.com/photo-1621905251189-08b45249be80?w=800&q=80"
+                    src="/images/company/photo-2.jpg"
                     alt="AC Repair"
                     fill
                     className="object-cover"
@@ -96,15 +147,15 @@ export default function AirConditioningPage() {
                 </div>
                 <ul className="space-y-2 mb-6">
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-blue-600 mr-2 mt-1 flex-shrink-0" />
+                    <CheckCircle className="h-5 w-5 text-[#E63946] mr-2 mt-1 flex-shrink-0" />
                     <span>24/7 emergency repair service</span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-blue-600 mr-2 mt-1 flex-shrink-0" />
+                    <CheckCircle className="h-5 w-5 text-[#E63946] mr-2 mt-1 flex-shrink-0" />
                     <span>Seasonal maintenance programs</span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-blue-600 mr-2 mt-1 flex-shrink-0" />
+                    <CheckCircle className="h-5 w-5 text-[#E63946] mr-2 mt-1 flex-shrink-0" />
                     <span>Transparent pricing with no hidden fees</span>
                   </li>
                 </ul>
@@ -122,7 +173,7 @@ export default function AirConditioningPage() {
                 </p>
                 <div className="relative h-64 rounded-lg overflow-hidden mb-6">
                   <Image
-                    src="https://images.unsplash.com/photo-1527089467043-b36a4456e020?w=800&q=80"
+                    src="/images/company/photo-4.jpg"
                     alt="Ductless Mini-Split Systems"
                     fill
                     className="object-cover"
@@ -130,15 +181,15 @@ export default function AirConditioningPage() {
                 </div>
                 <ul className="space-y-2 mb-6">
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-blue-600 mr-2 mt-1 flex-shrink-0" />
+                    <CheckCircle className="h-5 w-5 text-[#E63946] mr-2 mt-1 flex-shrink-0" />
                     <span>Single and multi-zone options</span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-blue-600 mr-2 mt-1 flex-shrink-0" />
+                    <CheckCircle className="h-5 w-5 text-[#E63946] mr-2 mt-1 flex-shrink-0" />
                     <span>Energy-efficient operation</span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-blue-600 mr-2 mt-1 flex-shrink-0" />
+                    <CheckCircle className="h-5 w-5 text-[#E63946] mr-2 mt-1 flex-shrink-0" />
                     <span>Quiet and discreet cooling</span>
                   </li>
                 </ul>
@@ -156,7 +207,7 @@ export default function AirConditioningPage() {
                 </p>
                 <div className="relative h-64 rounded-lg overflow-hidden mb-6">
                   <Image
-                    src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=800&q=80"
+                    src="/images/company/photo-3.jpg"
                     alt="Commercial Cooling"
                     fill
                     className="object-cover"
@@ -164,15 +215,15 @@ export default function AirConditioningPage() {
                 </div>
                 <ul className="space-y-2 mb-6">
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-blue-600 mr-2 mt-1 flex-shrink-0" />
+                    <CheckCircle className="h-5 w-5 text-[#E63946] mr-2 mt-1 flex-shrink-0" />
                     <span>Rooftop unit installation and service</span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-blue-600 mr-2 mt-1 flex-shrink-0" />
+                    <CheckCircle className="h-5 w-5 text-[#E63946] mr-2 mt-1 flex-shrink-0" />
                     <span>VRF/VRV system solutions</span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-blue-600 mr-2 mt-1 flex-shrink-0" />
+                    <CheckCircle className="h-5 w-5 text-[#E63946] mr-2 mt-1 flex-shrink-0" />
                     <span>Customized maintenance contracts</span>
                   </li>
                 </ul>
@@ -218,7 +269,7 @@ export default function AirConditioningPage() {
             </div>
 
             {/* Call to Action */}
-            <div className="bg-blue-600 text-white rounded-lg p-8 shadow-lg text-center">
+            <div className="bg-[#E63946] text-white rounded-lg p-8 shadow-lg text-center">
               <h3 className="text-2xl font-bold mb-4">
                 Ready to Improve Your Cooling System?
               </h3>
@@ -240,7 +291,7 @@ export default function AirConditioningPage() {
                   <Button
                     size="lg"
                     variant="outline"
-                    className="bg-transparent border-white text-white hover:bg-white hover:text-blue-600"
+                    className="bg-transparent border-white text-white hover:bg-white hover:text-[#E63946]"
                   >
                     Schedule Service
                   </Button>

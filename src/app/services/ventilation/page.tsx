@@ -1,9 +1,12 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import HeroSection from "@/components/HeroSection";
-import { CheckCircle, ArrowLeft } from "lucide-react";
+import { CheckCircle, ArrowLeft, ChevronRight, DollarSign, Star, Shield, Award, Wind } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function VentilationPage() {
   return (
@@ -11,21 +14,66 @@ export default function VentilationPage() {
       <main>
         {/* Hero Section */}
         <HeroSection
-          title="Ventilation Services"
-          subtitle="Improve your indoor air quality with our professional ventilation solutions."
-          backgroundImage="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=1400&q=90"
+          title="Indoor Air Quality & Ventilation"
+          subtitle="Breathe easier at home with our indoor air quality solutions. From duct cleaning to air purifiers, we help your family breathe healthier air."
+          backgroundImage="/images/company/photo-2.jpg"
         />
+
+        {/* Breadcrumb Navigation */}
+        <section className="bg-gray-50 border-b border-gray-200">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div className="flex items-center text-sm text-gray-600">
+              <Link href="/" className="hover:text-brand-orange-500 transition-colors">
+                Home
+              </Link>
+              <ChevronRight className="h-4 w-4 mx-2" />
+              <Link href="/services" className="hover:text-brand-orange-500 transition-colors">
+                Services
+              </Link>
+              <ChevronRight className="h-4 w-4 mx-2" />
+              <Link href="/services/residential" className="hover:text-brand-orange-500 transition-colors">
+                Residential
+              </Link>
+              <ChevronRight className="h-4 w-4 mx-2" />
+              <span className="text-brand-orange-500 font-medium">Indoor Air Quality</span>
+            </div>
+          </div>
+        </section>
+
+        {/* Trust Indicators */}
+        <section className="bg-brand-orange-500 text-white py-6">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+              <div className="flex flex-col items-center gap-2">
+                <Wind className="h-8 w-8" />
+                <div className="font-bold text-lg">Clean Air</div>
+              </div>
+              <div className="flex flex-col items-center gap-2">
+                <Shield className="h-8 w-8" />
+                <div className="font-bold text-lg">Healthier Home</div>
+              </div>
+              <div className="flex flex-col items-center gap-2">
+                <Award className="h-8 w-8" />
+                <div className="font-bold text-lg">Certified Pros</div>
+              </div>
+              <div className="flex flex-col items-center gap-2">
+                <Star className="h-8 w-8" />
+                <div className="font-bold text-lg">Top Rated</div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* Main Content */}
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mb-8">
               <Link
-                href="/services"
-                className="flex items-center text-blue-600 hover:text-blue-800 mb-6"
+                href="/services/residential"
+                className="flex items-center text-brand-orange-500 hover:text-brand-orange-600 mb-6 font-medium"
               >
                 <ArrowLeft className="h-4 w-4 mr-2" />
-                Back to All Services
+                Back to Residential Services
               </Link>
               <h2 className="text-3xl font-bold text-gray-900 mb-6">
                 Professional Ventilation Solutions
@@ -54,7 +102,7 @@ export default function VentilationPage() {
                 </p>
                 <div className="relative h-64 rounded-lg overflow-hidden mb-6">
                   <Image
-                    src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80"
+                    src="/images/company/photo-1.jpg"
                     alt="Air Duct Cleaning"
                     fill
                     className="object-cover"
@@ -62,15 +110,15 @@ export default function VentilationPage() {
                 </div>
                 <ul className="space-y-2 mb-6">
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-blue-600 mr-2 mt-1 flex-shrink-0" />
+                    <CheckCircle className="h-5 w-5 text-brand-orange-500 mr-2 mt-1 flex-shrink-0" />
                     <span>Complete duct system inspection</span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-blue-600 mr-2 mt-1 flex-shrink-0" />
+                    <CheckCircle className="h-5 w-5 text-brand-orange-500 mr-2 mt-1 flex-shrink-0" />
                     <span>Professional cleaning equipment</span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-blue-600 mr-2 mt-1 flex-shrink-0" />
+                    <CheckCircle className="h-5 w-5 text-brand-orange-500 mr-2 mt-1 flex-shrink-0" />
                     <span>EPA-approved sanitization treatments</span>
                   </li>
                 </ul>
@@ -88,7 +136,7 @@ export default function VentilationPage() {
                 </p>
                 <div className="relative h-64 rounded-lg overflow-hidden mb-6">
                   <Image
-                    src="https://images.unsplash.com/photo-1603201667141-5a2d4c673378?w=800&q=80"
+                    src="/images/company/photo-3.jpg"
                     alt="Ventilation System Design"
                     fill
                     className="object-cover"
@@ -96,15 +144,15 @@ export default function VentilationPage() {
                 </div>
                 <ul className="space-y-2 mb-6">
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-blue-600 mr-2 mt-1 flex-shrink-0" />
+                    <CheckCircle className="h-5 w-5 text-brand-orange-500 mr-2 mt-1 flex-shrink-0" />
                     <span>Custom system design for your space</span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-blue-600 mr-2 mt-1 flex-shrink-0" />
+                    <CheckCircle className="h-5 w-5 text-brand-orange-500 mr-2 mt-1 flex-shrink-0" />
                     <span>Energy-efficient solutions</span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-blue-600 mr-2 mt-1 flex-shrink-0" />
+                    <CheckCircle className="h-5 w-5 text-brand-orange-500 mr-2 mt-1 flex-shrink-0" />
                     <span>
                       Professional installation by certified technicians
                     </span>
@@ -124,7 +172,7 @@ export default function VentilationPage() {
                 </p>
                 <div className="relative h-64 rounded-lg overflow-hidden mb-6">
                   <Image
-                    src="https://images.unsplash.com/photo-1584267385494-9fdd9a71ad75?w=800&q=80"
+                    src="/images/company/photo-4.jpg"
                     alt="Air Purification"
                     fill
                     className="object-cover"
@@ -132,15 +180,15 @@ export default function VentilationPage() {
                 </div>
                 <ul className="space-y-2 mb-6">
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-blue-600 mr-2 mt-1 flex-shrink-0" />
+                    <CheckCircle className="h-5 w-5 text-brand-orange-500 mr-2 mt-1 flex-shrink-0" />
                     <span>HEPA filtration systems</span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-blue-600 mr-2 mt-1 flex-shrink-0" />
+                    <CheckCircle className="h-5 w-5 text-brand-orange-500 mr-2 mt-1 flex-shrink-0" />
                     <span>UV air purifiers</span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-blue-600 mr-2 mt-1 flex-shrink-0" />
+                    <CheckCircle className="h-5 w-5 text-brand-orange-500 mr-2 mt-1 flex-shrink-0" />
                     <span>Whole-home air quality solutions</span>
                   </li>
                 </ul>
@@ -159,7 +207,7 @@ export default function VentilationPage() {
                 </p>
                 <div className="relative h-64 rounded-lg overflow-hidden mb-6">
                   <Image
-                    src="https://images.unsplash.com/photo-1631545308539-8cf3fad6e5cc?w=800&q=80"
+                    src="/images/company/photo-2.jpg"
                     alt="Exhaust Fan Services"
                     fill
                     className="object-cover"
@@ -167,15 +215,15 @@ export default function VentilationPage() {
                 </div>
                 <ul className="space-y-2 mb-6">
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-blue-600 mr-2 mt-1 flex-shrink-0" />
+                    <CheckCircle className="h-5 w-5 text-brand-orange-500 mr-2 mt-1 flex-shrink-0" />
                     <span>Bathroom and kitchen exhaust fans</span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-blue-600 mr-2 mt-1 flex-shrink-0" />
+                    <CheckCircle className="h-5 w-5 text-brand-orange-500 mr-2 mt-1 flex-shrink-0" />
                     <span>Whole-house ventilation fans</span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-blue-600 mr-2 mt-1 flex-shrink-0" />
+                    <CheckCircle className="h-5 w-5 text-brand-orange-500 mr-2 mt-1 flex-shrink-0" />
                     <span>Commercial exhaust systems</span>
                   </li>
                 </ul>
@@ -195,32 +243,32 @@ export default function VentilationPage() {
                   </p>
                   <ul className="space-y-3 mb-6">
                     <li className="flex items-start">
-                      <CheckCircle className="h-5 w-5 text-blue-600 mr-2 mt-1 flex-shrink-0" />
+                      <CheckCircle className="h-5 w-5 text-brand-orange-500 mr-2 mt-1 flex-shrink-0" />
                       <span>Reducing allergens, dust, and pollutants</span>
                     </li>
                     <li className="flex items-start">
-                      <CheckCircle className="h-5 w-5 text-blue-600 mr-2 mt-1 flex-shrink-0" />
+                      <CheckCircle className="h-5 w-5 text-brand-orange-500 mr-2 mt-1 flex-shrink-0" />
                       <span>
                         Controlling humidity levels to prevent mold growth
                       </span>
                     </li>
                     <li className="flex items-start">
-                      <CheckCircle className="h-5 w-5 text-blue-600 mr-2 mt-1 flex-shrink-0" />
+                      <CheckCircle className="h-5 w-5 text-brand-orange-500 mr-2 mt-1 flex-shrink-0" />
                       <span>Removing odors and stale air</span>
                     </li>
                     <li className="flex items-start">
-                      <CheckCircle className="h-5 w-5 text-blue-600 mr-2 mt-1 flex-shrink-0" />
+                      <CheckCircle className="h-5 w-5 text-brand-orange-500 mr-2 mt-1 flex-shrink-0" />
                       <span>Improving overall health and comfort</span>
                     </li>
                     <li className="flex items-start">
-                      <CheckCircle className="h-5 w-5 text-blue-600 mr-2 mt-1 flex-shrink-0" />
+                      <CheckCircle className="h-5 w-5 text-brand-orange-500 mr-2 mt-1 flex-shrink-0" />
                       <span>Enhancing HVAC system efficiency</span>
                     </li>
                   </ul>
                 </div>
                 <div className="relative h-80 rounded-lg overflow-hidden">
                   <Image
-                    src="https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?w=800&q=80"
+                    src="/images/company/photo-1.jpg"
                     alt="Indoor Air Quality"
                     fill
                     className="object-cover"
@@ -230,7 +278,7 @@ export default function VentilationPage() {
             </div>
 
             {/* Call to Action */}
-            <div className="bg-blue-600 text-white rounded-lg p-8 shadow-lg text-center">
+            <div className="bg-brand-orange-500 text-white rounded-lg p-8 shadow-lg text-center">
               <h3 className="text-2xl font-bold mb-4">
                 Breathe Easier with Quantum HVAC
               </h3>
@@ -252,7 +300,7 @@ export default function VentilationPage() {
                   <Button
                     size="lg"
                     variant="outline"
-                    className="bg-transparent border-white text-white hover:bg-white hover:text-blue-600"
+                    className="bg-transparent border-white text-white hover:bg-white hover:text-brand-orange-500"
                   >
                     Schedule Service
                   </Button>

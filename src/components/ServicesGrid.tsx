@@ -17,6 +17,8 @@ import {
   Settings,
   RefreshCw,
   ArrowRight,
+  Building2,
+  Hammer,
 } from "lucide-react";
 
 interface ServiceCardProps {
@@ -74,6 +76,13 @@ const ServiceCard = ({
 const ServicesGrid = () => {
   const services = [
     {
+      title: "Commercial HVAC",
+      description:
+        "Enterprise-grade HVAC solutions for businesses. Energy-efficient systems with 24/7 support and maintenance programs.",
+      icon: <Building2 size={24} />,
+      link: "/services/commercial",
+    },
+    {
       title: "Heating",
       description:
         "Expert installation and maintenance of furnaces, boilers, and heat pumps to keep your home warm and comfortable.",
@@ -107,6 +116,13 @@ const ServicesGrid = () => {
         "Regular maintenance programs to ensure your HVAC systems operate efficiently and reliably year-round.",
       icon: <Settings size={24} />,
       link: "/services/maintenance",
+    },
+    {
+      title: "Sheet Metal Fabrication",
+      description:
+        "In-house custom sheet metal fabrication for ductwork, industrial applications, and architectural metalwork.",
+      icon: <Hammer size={24} />,
+      link: "/services/sheet-metal",
     },
     {
       title: "Repair",
